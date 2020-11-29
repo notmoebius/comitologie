@@ -12,9 +12,12 @@
         <th scope="col">Objectif</th>
         <th scope="col">Branche</th>
         <th scope="col">Pilote</th>
-        <th scope="col">Mission</th>
+        <th scope="col">Mission ?</th>
         <th scope="col">Fréquence</th>
         <th scope="col">Créé le</th>
+        <th scope="col"> </th>
+        <th scope="col">Actions</th>
+        <th scope="col"> </th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +28,11 @@
           <td><%= group.target_description %></td>
           <td><%= group.branch %></td>
           <td><%= group.pilote %></td>
-          <td><%= group.mission %></td>
+          <td><% if group.mission %>
+            <p class="card-text text-success">Lettre</p>
+          <% else %>
+            <p class="card-text text-warning">Pas de Lettre</p>
+          <% end %></td>
           <td><%= group.frequency %></td>
           <td><%= group.date_begin %></td>
           <td><%= link_to 'Voir', group, type:"button", class:"btn btn-outline-success" %></td>

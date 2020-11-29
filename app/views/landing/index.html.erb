@@ -18,19 +18,19 @@
     <p id="notice"><%= notice %></p>
 
    <div class="container">
-      <div class="card-deck row row-cols-1 row-cols-md-2">
-        <% @groups.each do |group| %>
-          <div class="col mb-4">
-            <div class="card rounded">
-              <div class="card-header text-center"><%= group.mail %></div>
-              <div class="card-body">
-                <h5 class="card-title text-center"><%= group.label %></h5>
-                <p class="card-text text-justify"><%= group.target %></p>
-                <p class="card-text"><%= group.pilote %></p>
-              </div>
-              <div class="card-footer center">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= link_to 'Détail', group %></button>
-              </div>
+      <div class="card-deck row "> <!-- row-cols-1 row-cols-md-2 -->
+        <% @groups.order(name: :asc).each do |group| %>
+          <div class="col-md-4 col-sm-6 col-12 pt-4">
+            <div class="card rounded h-100 shadow mb-5 bg-white rounded">
+                <div class="card-header text-center text-white bg-primary"><%= group.name %></div>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><%= group.branch %></h5>
+                  <p class="card-text text-justify"><%= group.target_description %></p>
+                  <p class="card-text"><%= group.pilote %></p>
+                </div>
+                <div class="card-footer center">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= link_to 'Détail', group %></button>
+                </div>
             </div>
           </div>
         <% end %>
