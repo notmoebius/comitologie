@@ -15,9 +15,9 @@
     <% @types.each do |type| %>
       <tr>
         <td><%= type.label %></td>
-        <td><%= link_to 'Voir', type %></td>
-        <td><%= link_to 'Modifier', edit_type_path(type) %></td>
-        <td><%= link_to 'Supprimer', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Voir', type, type:"button", class:"btn btn-outline-success" %></td>
+        <td><%= link_to 'Modifier', edit_type_path(type), type:"button", class:"btn btn-outline-info" %></td>
+        <td><%= link_to 'Supprimer', type, type:"button", class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

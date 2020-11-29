@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :label %>
-    <%= form.text_field :label %>
-  </div>
+    <div class="container">
+    <div class="form-group">
+      <div class="field">
+        <label for="exampleFormControlTextarea1">Libellé du type</label>
+        <%= form.text_field :label , type:"text", class:"form-control" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit 'Enregistrer', class: 'btn btn-primary'  %>
+    </div>
 <% end %>

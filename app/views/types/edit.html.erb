@@ -1,6 +1,8 @@
-<h1>Editing Type</h1>
+<div class='container'>
+	<h1>Modifier un type</h1>
 
-<%= render 'form', type: @type %>
+	<%= render 'form', type: @type %>
 
-<%= link_to 'Show', @type %> |
-<%= link_to 'Back', types_path %>
+	<%= link_to 'Voir', @type, type:"button", class:"btn btn-outline-success" %> |
+	<%= link_to 'Retour', types_path %>
+</div>
