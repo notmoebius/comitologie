@@ -16,8 +16,11 @@
         </li>
       </ul>
     </div>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">OK</button>
-    </form>
+    <!-- Zone formualaire de recherche -->
+    <div class="form-inline my-2 my-lg-0">
+      <%= simple_form_for :search, url: groups_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, require: false, label: false, placeholder: 'Chercher un groupe', input_html: {value: ""} %>   
+        <%= f.submit "Chercher", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </nav>

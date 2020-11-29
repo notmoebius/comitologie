@@ -5,6 +5,13 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    @search = params["search"]
+    if @search.present?
+      @label = @search[:name]
+      @groups = Group.where("name LIKE ?", "%#{@label}%")
+      # @reports = Group.where("label ILIKE ?", "%#{@label}%") pour pgsql
+      # @reports = Group.where("label LIKE ?", "%#{@label}%")
+    end
   end
 
   # GET /groups/1
@@ -69,6 +76,6 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:name, :target_description, :branch, :pilote, :mission, :frequency, :date_begin)
+      params.require(:group).permit(:name, :target_description, :branch, :pilote, :mission, :frequency, :date_begin, :search)
     end
 end
