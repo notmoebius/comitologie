@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  target_description: MyText
+  branch: MyString
+  pilote: MyString
+  mission: false
+  frequency: MyString
+  date_begin: 2020-11-15
+
+two:
+  name: MyString
+  target_description: MyText
+  branch: MyString
+  pilote: MyString
+  mission: false
+  frequency: MyString
+  date_begin: 2020-11-15
