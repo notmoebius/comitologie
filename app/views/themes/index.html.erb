@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Themes</h1>
+<div class="container">
+<h1>Gestion des Thèmes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Label</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @themes.each do |theme| %>
+<%= link_to 'Créer un thème', new_theme_path, type:"button", class:"btn btn-outline-success" %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= theme.label %></td>
-        <td><%= link_to 'Show', theme %></td>
-        <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-        <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">#</th>
+        <th scope="col">Thèmes</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @themes.each do |theme| %>
+        <tr>
+          <td scope="row"><%= theme.id %></td>
+          <td scope="row"><%= theme.label %></td>
+          <td><%= link_to 'Voir', theme , type:"button", class:"btn btn-outline-success" %></td>
+          <td><%= link_to 'Modifier', edit_theme_path(theme) , type:"button", class:"btn btn-outline-info" %></td>
+          <td><%= link_to 'Supprimer', theme, type:"button", class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Etes-vous sûr ?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
+
+</div>
 <br>
-
-<%= link_to 'New Theme', new_theme_path %>
