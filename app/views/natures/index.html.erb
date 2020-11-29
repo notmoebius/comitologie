@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-<h1>Gestion des Natures de groupe</h1>
+  <h1>Gestion des Natures de groupe</h1>
 
-<%= link_to 'Créer une nature', new_nature_path, type:"button", class:"btn btn-outline-success" %>
+  <%= link_to 'Créer une nature', new_nature_path, type:"button", class:"btn btn-outline-success" %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -12,16 +12,16 @@
       </tr>
     </thead>
     <tbody>
-    <% @natures.each do |nature| %>
-      <tr>
-        <td><%= nature.label %></td>
-        <td><%= link_to 'Voir', nature, type:"button", class:"btn btn-outline-success" %></td>
-        <td><%= link_to 'Modifier', edit_nature_path(nature), type:"button", class:"btn btn-outline-info" %></td>
-        <td><%= link_to 'Supprimer', nature, type:"button", class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <% @natures.each do |nature| %>
+        <tr>
+          <td><%= nature.label %></td>
+          <td><%= link_to 'Voir', nature, type:"button", class:"btn btn-outline-success" %></td>
+          <td><%= link_to 'Modifier', edit_nature_path(nature), type:"button", class:"btn btn-outline-info" %></td>
+          <td><%= link_to 'Supprimer', nature, type:"button", class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 

@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+<div class="container">
+  <h1>Gestion des Groupes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Target description</th>
-      <th>Branch</th>
-      <th>Pilote</th>
-      <th>Mission</th>
-      <th>Frequency</th>
-      <th>Date begin</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
+  <%= link_to 'Créer un groupe', new_group_path, type:"button", class:"btn btn-outline-success" %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= group.name %></td>
-        <td><%= group.target_description %></td>
-        <td><%= group.branch %></td>
-        <td><%= group.pilote %></td>
-        <td><%= group.mission %></td>
-        <td><%= group.frequency %></td>
-        <td><%= group.date_begin %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Objectif</th>
+        <th scope="col">Branche</th>
+        <th scope="col">Pilote</th>
+        <th scope="col">Mission</th>
+        <th scope="col">Fréquence</th>
+        <th scope="col">Créé le</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @groups.each do |group| %>
+        <tr>
+          <td><%= group.id %></td>
+          <td><%= group.name %></td>
+          <td><%= group.target_description %></td>
+          <td><%= group.branch %></td>
+          <td><%= group.pilote %></td>
+          <td><%= group.mission %></td>
+          <td><%= group.frequency %></td>
+          <td><%= group.date_begin %></td>
+          <td><%= link_to 'Voir', group, type:"button", class:"btn btn-outline-success" %></td>
+          <td><%= link_to 'Modifier', edit_group_path(group), type:"button", class:"btn btn-outline-info" %></td>
+          <td><%= link_to 'Supprimer', group, type:"button", class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
-
-<%= link_to 'New Group', new_group_path %>
