@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: comitologie_production
-  username: postgres
-  password: ''
+  username: admin
+  password: '1mioqpatt'
